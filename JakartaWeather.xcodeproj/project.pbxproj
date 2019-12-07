@@ -1,0 +1,443 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		16B43E8E239A661300893737 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B43E8D239A661300893737 /* AppDelegate.swift */; };
+		16B43E90239A661300893737 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B43E8F239A661300893737 /* SceneDelegate.swift */; };
+		16B43E92239A661300893737 /* WeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B43E91239A661300893737 /* WeatherVC.swift */; };
+		16B43E95239A661300893737 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16B43E93239A661300893737 /* Main.storyboard */; };
+		16B43E97239A661600893737 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16B43E96239A661600893737 /* Assets.xcassets */; };
+		16B43E9A239A661600893737 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16B43E98239A661600893737 /* LaunchScreen.storyboard */; };
+		16B43EAF239B267C00893737 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B43EAE239B267C00893737 /* WeatherModel.swift */; };
+		AD964854B60CE06BEBD496EA /* Pods_JakartaWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B740C1DCCB1E74BF01D1D04E /* Pods_JakartaWeather.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		122462FAE12247B50193D3A0 /* Pods-JakartaWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JakartaWeather.release.xcconfig"; path = "Target Support Files/Pods-JakartaWeather/Pods-JakartaWeather.release.xcconfig"; sourceTree = "<group>"; };
+		16B43E8A239A661300893737 /* JakartaWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JakartaWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		16B43E8D239A661300893737 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		16B43E8F239A661300893737 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		16B43E91239A661300893737 /* WeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherVC.swift; sourceTree = "<group>"; };
+		16B43E94239A661300893737 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		16B43E96239A661600893737 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		16B43E99239A661600893737 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		16B43E9B239A661600893737 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16B43EAE239B267C00893737 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		9537384FF60D4D3E810F443B /* Pods-JakartaWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JakartaWeather.debug.xcconfig"; path = "Target Support Files/Pods-JakartaWeather/Pods-JakartaWeather.debug.xcconfig"; sourceTree = "<group>"; };
+		B740C1DCCB1E74BF01D1D04E /* Pods_JakartaWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JakartaWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		16B43E87239A661300893737 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD964854B60CE06BEBD496EA /* Pods_JakartaWeather.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		16B43E81239A661300893737 = {
+			isa = PBXGroup;
+			children = (
+				16B43E8C239A661300893737 /* JakartaWeather */,
+				16B43E8B239A661300893737 /* Products */,
+				E95DF0C6F49D8F7FDC419E8E /* Pods */,
+				D77DC9C8CEEB083D2D5EBF18 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		16B43E8B239A661300893737 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				16B43E8A239A661300893737 /* JakartaWeather.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		16B43E8C239A661300893737 /* JakartaWeather */ = {
+			isa = PBXGroup;
+			children = (
+				16B43EAD239B1BA900893737 /* Model */,
+				16B43EAC239B1B9700893737 /* View */,
+				16B43EAB239AA4F000893737 /* Controller */,
+				16B43E8D239A661300893737 /* AppDelegate.swift */,
+				16B43E8F239A661300893737 /* SceneDelegate.swift */,
+				16B43E98239A661600893737 /* LaunchScreen.storyboard */,
+				16B43E96239A661600893737 /* Assets.xcassets */,
+				16B43E9B239A661600893737 /* Info.plist */,
+			);
+			path = JakartaWeather;
+			sourceTree = "<group>";
+		};
+		16B43EAB239AA4F000893737 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				16B43E91239A661300893737 /* WeatherVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		16B43EAC239B1B9700893737 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				16B43E93239A661300893737 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		16B43EAD239B1BA900893737 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				16B43EAE239B267C00893737 /* WeatherModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D77DC9C8CEEB083D2D5EBF18 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B740C1DCCB1E74BF01D1D04E /* Pods_JakartaWeather.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E95DF0C6F49D8F7FDC419E8E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9537384FF60D4D3E810F443B /* Pods-JakartaWeather.debug.xcconfig */,
+				122462FAE12247B50193D3A0 /* Pods-JakartaWeather.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		16B43E89239A661300893737 /* JakartaWeather */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16B43E9E239A661600893737 /* Build configuration list for PBXNativeTarget "JakartaWeather" */;
+			buildPhases = (
+				DF8FC7EFCB42E277EC2252B6 /* [CP] Check Pods Manifest.lock */,
+				16B43E86239A661300893737 /* Sources */,
+				16B43E87239A661300893737 /* Frameworks */,
+				16B43E88239A661300893737 /* Resources */,
+				F489FF2E37CA4ACC11873901 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JakartaWeather;
+			productName = JakartaWeather;
+			productReference = 16B43E8A239A661300893737 /* JakartaWeather.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		16B43E82239A661300893737 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = Falah;
+				TargetAttributes = {
+					16B43E89239A661300893737 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 16B43E85239A661300893737 /* Build configuration list for PBXProject "JakartaWeather" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 16B43E81239A661300893737;
+			productRefGroup = 16B43E8B239A661300893737 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				16B43E89239A661300893737 /* JakartaWeather */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		16B43E88239A661300893737 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16B43E9A239A661600893737 /* LaunchScreen.storyboard in Resources */,
+				16B43E97239A661600893737 /* Assets.xcassets in Resources */,
+				16B43E95239A661300893737 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DF8FC7EFCB42E277EC2252B6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JakartaWeather-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F489FF2E37CA4ACC11873901 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JakartaWeather/Pods-JakartaWeather-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JakartaWeather/Pods-JakartaWeather-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JakartaWeather/Pods-JakartaWeather-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		16B43E86239A661300893737 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16B43E92239A661300893737 /* WeatherVC.swift in Sources */,
+				16B43E8E239A661300893737 /* AppDelegate.swift in Sources */,
+				16B43EAF239B267C00893737 /* WeatherModel.swift in Sources */,
+				16B43E90239A661300893737 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		16B43E93239A661300893737 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				16B43E94239A661300893737 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		16B43E98239A661600893737 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				16B43E99239A661600893737 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		16B43E9C239A661600893737 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		16B43E9D239A661600893737 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		16B43E9F239A661600893737 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9537384FF60D4D3E810F443B /* Pods-JakartaWeather.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L2RW8586XY;
+				INFOPLIST_FILE = JakartaWeather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.syamsulfalah.JakartaWeather;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		16B43EA0239A661600893737 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 122462FAE12247B50193D3A0 /* Pods-JakartaWeather.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L2RW8586XY;
+				INFOPLIST_FILE = JakartaWeather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.syamsulfalah.JakartaWeather;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		16B43E85239A661300893737 /* Build configuration list for PBXProject "JakartaWeather" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16B43E9C239A661600893737 /* Debug */,
+				16B43E9D239A661600893737 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		16B43E9E239A661600893737 /* Build configuration list for PBXNativeTarget "JakartaWeather" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16B43E9F239A661600893737 /* Debug */,
+				16B43EA0239A661600893737 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 16B43E82239A661300893737 /* Project object */;
+}

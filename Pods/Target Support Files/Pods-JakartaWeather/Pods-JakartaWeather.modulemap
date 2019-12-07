@@ -1,0 +1,6 @@
+framework module Pods_JakartaWeather {
+  umbrella header "Pods-JakartaWeather-umbrella.h"
+
+  export *
+  module * { export * }
+}
