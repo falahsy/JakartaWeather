@@ -74,11 +74,6 @@ class WeatherVC: UIViewController {
         }
     }
     
-    func setUIStyle() {
-        cityLabel.font = UIFont.boldSystemFont(ofSize: dynamicFontSizeForIphone(fontSize: 36))
-//        cityLabel.textColor = .red
-    }
-    
     func run(after miliseconds: Int, completion: @escaping () -> Void) {
         let deadline = DispatchTime.now() + .milliseconds(miliseconds)
         DispatchQueue.main.asyncAfter(deadline: deadline, execute: {
@@ -97,7 +92,7 @@ class WeatherVC: UIViewController {
                 self.updateCurrentWeatherData(json: weatherJSON)
             }
             else {
-                print("Error \(String(describing: response.result.error))")
+//                print("Error \(String(describing: response.result.error))")
                 self.cityLabel.text = "Connection Issues"
             }
         }
@@ -139,9 +134,9 @@ class WeatherVC: UIViewController {
             response in
             if response.result.isSuccess {
                 
-                print("Success! Got the weather data")
+//                print("Success! Got the weather data")
                 let weatherJSON : JSON = JSON(response.result.value!)
-                print(weatherJSON)
+//                print(weatherJSON)
                 
                 self.updateForecastWeatherData(json: weatherJSON)
             }
@@ -178,16 +173,16 @@ class WeatherVC: UIViewController {
         print(json["list"][0]["dt_txt"])
         
         // Day 3
-        weatherDataModel.temperatureDay3 = Int(json["list"][14]["main"]["temp"].doubleValue - 273.15)
-        weatherDataModel.weatherIconDay3 = getIconConditionName(condition: json["list"][14]["weather"][0]["main"].stringValue)
+        weatherDataModel.temperatureDay3 = Int(json["list"][15]["main"]["temp"].doubleValue - 273.15)
+        weatherDataModel.weatherIconDay3 = getIconConditionName(condition: json["list"][15]["weather"][0]["main"].stringValue)
         
         // Day 4
-        weatherDataModel.temperatureDay4 = Int(json["list"][21]["main"]["temp"].doubleValue - 273.15)
-        weatherDataModel.weatherIconDay4 = getIconConditionName(condition: json["list"][21]["weather"][0]["main"].stringValue)
+        weatherDataModel.temperatureDay4 = Int(json["list"][23]["main"]["temp"].doubleValue - 273.15)
+        weatherDataModel.weatherIconDay4 = getIconConditionName(condition: json["list"][23]["weather"][0]["main"].stringValue)
         
         // Day 5
-        weatherDataModel.temperatureDay5 = Int(json["list"][28]["main"]["temp"].doubleValue - 273.15)
-        weatherDataModel.weatherIconDay5 = getIconConditionName(condition: json["list"][28]["weather"][0]["main"].stringValue)
+        weatherDataModel.temperatureDay5 = Int(json["list"][31]["main"]["temp"].doubleValue - 273.15)
+        weatherDataModel.weatherIconDay5 = getIconConditionName(condition: json["list"][31]["weather"][0]["main"].stringValue)
         
         dispatchGroup.enter()
         run(after: 10) {
@@ -282,6 +277,51 @@ class WeatherVC: UIViewController {
         let year = dateFormatter.string(from: date)
         
         return "\(dayOfWeek), \(day) \(month) \(year)"
+    }
+    
+    func setUIStyle() {
+        cityLabel.font = UIFont.boldSystemFont(ofSize: dynamicFontSizeForIphone(fontSize: 26))
+        cityLabel.textColor = .white
+        
+        dayAndDateLabel.font = UIFont.init(name: "Inter", size: dynamicFontSizeForIphone(fontSize: 10))
+        dayAndDateLabel.textColor = .white
+        
+        temperatureLabel.font = UIFont.systemFont(ofSize: dynamicFontSizeForIphone(fontSize: 70), weight: .thin)
+        temperatureLabel.textColor = .white
+        
+        conditionLabel.font = UIFont.systemFont(ofSize: dynamicFontSizeForIphone(fontSize: 14), weight: .regular)
+        conditionLabel.textColor = .white
+        
+        hour1.font = UIFont.systemFont(ofSize: dynamicFontSizeForIphone(fontSize: 12), weight: .regular)
+        hour1.textColor = .black
+        
+        hour2.font = UIFont.systemFont(ofSize: dynamicFontSizeForIphone(fontSize: 12), weight: .regular)
+        hour2.textColor = .black
+        
+        hour3.font = UIFont.systemFont(ofSize: dynamicFontSizeForIphone(fontSize: 12), weight: .regular)
+        hour3.textColor = .black
+        
+        hour4.font = UIFont.systemFont(ofSize: dynamicFontSizeForIphone(fontSize: 12), weight: .regular)
+        hour4.textColor = .black
+        
+        hour5.font = UIFont.systemFont(ofSize: dynamicFontSizeForIphone(fontSize: 12), weight: .regular)
+        hour5.textColor = .black
+        
+        tempHour1.textColor = #colorLiteral(red: 0.7333333333, green: 0.7333333333, blue: 0.7333333333, alpha: 1)
+        tempHour2.textColor = #colorLiteral(red: 0.7333333333, green: 0.7333333333, blue: 0.7333333333, alpha: 1)
+        tempHour3.textColor = #colorLiteral(red: 0.7333333333, green: 0.7333333333, blue: 0.7333333333, alpha: 1)
+        tempHour4.textColor = #colorLiteral(red: 0.7333333333, green: 0.7333333333, blue: 0.7333333333, alpha: 1)
+        tempHour5.textColor = #colorLiteral(red: 0.7333333333, green: 0.7333333333, blue: 0.7333333333, alpha: 1)
+        
+        day2Label.font = UIFont.boldSystemFont(ofSize: dynamicFontSizeForIphone(fontSize: 12))
+        day3Label.font = UIFont.boldSystemFont(ofSize: dynamicFontSizeForIphone(fontSize: 12))
+        day4Label.font = UIFont.boldSystemFont(ofSize: dynamicFontSizeForIphone(fontSize: 12))
+        day5Label.font = UIFont.boldSystemFont(ofSize: dynamicFontSizeForIphone(fontSize: 12))
+        
+        temperatureDay2.textColor = #colorLiteral(red: 0.7333333333, green: 0.7333333333, blue: 0.7333333333, alpha: 1)
+        temperatureDay3.textColor = #colorLiteral(red: 0.7333333333, green: 0.7333333333, blue: 0.7333333333, alpha: 1)
+        temperatureDay4.textColor = #colorLiteral(red: 0.7333333333, green: 0.7333333333, blue: 0.7333333333, alpha: 1)
+        temperatureDay5.textColor = #colorLiteral(red: 0.7333333333, green: 0.7333333333, blue: 0.7333333333, alpha: 1)
     }
     
     func dynamicFontSizeForIphone(fontSize : CGFloat) -> CGFloat {
