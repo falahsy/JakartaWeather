@@ -59,7 +59,6 @@ class WeatherVC: UIViewController {
     @IBOutlet weak var temperatureDay5: UILabel!
     
     let weatherDataModel = WeatherModel()
-    let dispatchGroup = DispatchGroup()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,18 +66,14 @@ class WeatherVC: UIViewController {
         
         let params : [String : String] = ["q" : "Jakarta", "appid" : KEY_ID]
         
-        dispatchGroup.notify(queue: .main) {
-            self.setUIStyle()
+        let dispatchQueue = DispatchQueue.global()
+        dispatchQueue.async {
             self.getCurrentWeather(url: self.URL_CURRENT_WEATHER, parameters: params)
             self.getForecastWeatherData(url: self.URL_FORECAST_WEATHER, parameters: params)
+            DispatchQueue.main.async {
+                self.setUIStyle()
+            }
         }
-    }
-    
-    func run(after miliseconds: Int, completion: @escaping () -> Void) {
-        let deadline = DispatchTime.now() + .milliseconds(miliseconds)
-        DispatchQueue.main.asyncAfter(deadline: deadline, execute: {
-            completion()
-        })
     }
     
     // MARK: Block for Current Weather Data
@@ -104,26 +99,14 @@ class WeatherVC: UIViewController {
         weatherDataModel.condition = json["weather"][0]["main"].stringValue
         weatherDataModel.weatherIconName = getIconConditionName(condition: json["weather"][0]["main"].stringValue)
         
-        dispatchGroup.enter()
-        run(after: 5) {
-            self.updateUICurrentWeatherData()
-            self.dispatchGroup.leave()
-        }
+        self.updateUICurrentWeatherData()
     }
 
     func updateUICurrentWeatherData() {
         cityLabel.text = weatherDataModel.city
-//        cityLabel.textColor = .white
-        
         temperatureLabel.text = "\(weatherDataModel.temperature)°"
-//        temperatureLabel.textColor = .white
-        
         dayAndDateLabel.text = getDayAndDate()
-//        dayAndDateLabel.textColor = .white
-        
         conditionLabel.text = weatherDataModel.condition
-//        conditionLabel.textColor = .white
-        
         weatherConditionUIImage.image = UIImage(named: weatherDataModel.weatherIconName)
     }
     
@@ -170,7 +153,6 @@ class WeatherVC: UIViewController {
         // Day 2
         weatherDataModel.temperatureDay2 = Int(json["list"][7]["main"]["temp"].doubleValue - 273.15)
         weatherDataModel.weatherIconDay2 = getIconConditionName(condition: json["list"][7]["weather"][0]["main"].stringValue)
-        print(json["list"][0]["dt_txt"])
         
         // Day 3
         weatherDataModel.temperatureDay3 = Int(json["list"][15]["main"]["temp"].doubleValue - 273.15)
@@ -184,11 +166,8 @@ class WeatherVC: UIViewController {
         weatherDataModel.temperatureDay5 = Int(json["list"][31]["main"]["temp"].doubleValue - 273.15)
         weatherDataModel.weatherIconDay5 = getIconConditionName(condition: json["list"][31]["weather"][0]["main"].stringValue)
         
-        dispatchGroup.enter()
-        run(after: 10) {
-            self.updateUIForecastWeatherData()
-            self.dispatchGroup.leave()
-        }
+        self.updateUIForecastWeatherData()
+        
     }
     
     func updateUIForecastWeatherData() {
@@ -279,6 +258,13 @@ class WeatherVC: UIViewController {
         return "\(dayOfWeek), \(day) \(month) \(year)"
     }
     
+    func dynamicFontSizeForIphone(fontSize : CGFloat) -> CGFloat {
+        var current_Size : CGFloat = 0.0
+        current_Size = self.sizeScreen.width/320
+        let FinalSize : CGFloat = fontSize * current_Size
+        return FinalSize
+    }
+    
     func setUIStyle() {
         cityLabel.font = UIFont.boldSystemFont(ofSize: dynamicFontSizeForIphone(fontSize: 26))
         cityLabel.textColor = .white
@@ -307,27 +293,20 @@ class WeatherVC: UIViewController {
         hour5.font = UIFont.systemFont(ofSize: dynamicFontSizeForIphone(fontSize: 12), weight: .regular)
         hour5.textColor = .black
         
+        day2Label.font = UIFont.boldSystemFont(ofSize: dynamicFontSizeForIphone(fontSize: 12))
+        day3Label.font = UIFont.boldSystemFont(ofSize: dynamicFontSizeForIphone(fontSize: 12))
+        day4Label.font = UIFont.boldSystemFont(ofSize: dynamicFontSizeForIphone(fontSize: 12))
+        day5Label.font = UIFont.boldSystemFont(ofSize: dynamicFontSizeForIphone(fontSize: 12))
+        
         tempHour1.textColor = #colorLiteral(red: 0.7333333333, green: 0.7333333333, blue: 0.7333333333, alpha: 1)
         tempHour2.textColor = #colorLiteral(red: 0.7333333333, green: 0.7333333333, blue: 0.7333333333, alpha: 1)
         tempHour3.textColor = #colorLiteral(red: 0.7333333333, green: 0.7333333333, blue: 0.7333333333, alpha: 1)
         tempHour4.textColor = #colorLiteral(red: 0.7333333333, green: 0.7333333333, blue: 0.7333333333, alpha: 1)
         tempHour5.textColor = #colorLiteral(red: 0.7333333333, green: 0.7333333333, blue: 0.7333333333, alpha: 1)
         
-        day2Label.font = UIFont.boldSystemFont(ofSize: dynamicFontSizeForIphone(fontSize: 12))
-        day3Label.font = UIFont.boldSystemFont(ofSize: dynamicFontSizeForIphone(fontSize: 12))
-        day4Label.font = UIFont.boldSystemFont(ofSize: dynamicFontSizeForIphone(fontSize: 12))
-        day5Label.font = UIFont.boldSystemFont(ofSize: dynamicFontSizeForIphone(fontSize: 12))
-        
         temperatureDay2.textColor = #colorLiteral(red: 0.7333333333, green: 0.7333333333, blue: 0.7333333333, alpha: 1)
         temperatureDay3.textColor = #colorLiteral(red: 0.7333333333, green: 0.7333333333, blue: 0.7333333333, alpha: 1)
         temperatureDay4.textColor = #colorLiteral(red: 0.7333333333, green: 0.7333333333, blue: 0.7333333333, alpha: 1)
         temperatureDay5.textColor = #colorLiteral(red: 0.7333333333, green: 0.7333333333, blue: 0.7333333333, alpha: 1)
-    }
-    
-    func dynamicFontSizeForIphone(fontSize : CGFloat) -> CGFloat {
-        var current_Size : CGFloat = 0.0
-        current_Size = self.sizeScreen.width/320
-        let FinalSize : CGFloat = fontSize * current_Size
-        return FinalSize
     }
 }

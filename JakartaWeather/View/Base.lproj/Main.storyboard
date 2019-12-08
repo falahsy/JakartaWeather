@@ -414,9 +414,9 @@
                                                     <constraint firstAttribute="height" constant="38" id="vxA-ly-yhd"/>
                                                 </constraints>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="Jakarta">
+                                                    <fragment content="   ">
                                                         <attributes>
-                                                            <color key="NSColor" red="0.059225745500000003" green="0.7380382419" blue="0.91375058890000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                             <font key="NSFont" size="36" name="Inter-Bold"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
@@ -430,9 +430,9 @@
                                                     <constraint firstAttribute="height" constant="34" id="Nyl-c7-BXp"/>
                                                 </constraints>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="Day, Date Month Year ">
+                                                    <fragment content="   ">
                                                         <attributes>
-                                                            <color key="NSColor" red="0.059225745500000003" green="0.7380382419" blue="0.91375058890000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                             <font key="NSFont" size="24" name="Inter-Regular"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
@@ -446,7 +446,7 @@
                                                     <constraint firstAttribute="height" constant="166" id="avY-cA-yyC"/>
                                                 </constraints>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="28">
+                                                    <fragment content="  ">
                                                         <attributes>
                                                             <color key="NSColor" red="0.059225745500000003" green="0.7380382419" blue="0.91375058890000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <font key="NSFont" size="96" name="Inter-Regular"/>
@@ -474,9 +474,9 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfw-xV-mpR">
                                                         <rect key="frame" x="193.5" y="13.5" width="92" height="23.5"/>
                                                         <attributedString key="attributedText">
-                                                            <fragment content="Clouds">
+                                                            <fragment content="   ">
                                                                 <attributes>
-                                                                    <color key="NSColor" red="0.059225745500000003" green="0.7380382419" blue="0.91375058890000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                     <font key="NSFont" size="20" name="Inter-Bold"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                 </attributes>
