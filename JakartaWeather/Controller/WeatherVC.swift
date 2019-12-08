@@ -16,6 +16,8 @@ class WeatherVC: UIViewController {
     let URL_FORECAST_WEATHER = "http://api.openweathermap.org/data/2.5/forecast"
     let KEY_ID = "ba46c0048aef6d843a25188339e0388e"
     
+    let sizeScreen = UIScreen.main.bounds
+    
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var dayAndDateLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
@@ -66,9 +68,15 @@ class WeatherVC: UIViewController {
         let params : [String : String] = ["q" : "Jakarta", "appid" : KEY_ID]
         
         dispatchGroup.notify(queue: .main) {
+            self.setUIStyle()
             self.getCurrentWeather(url: self.URL_CURRENT_WEATHER, parameters: params)
             self.getForecastWeatherData(url: self.URL_FORECAST_WEATHER, parameters: params)
         }
+    }
+    
+    func setUIStyle() {
+        cityLabel.font = UIFont.boldSystemFont(ofSize: dynamicFontSizeForIphone(fontSize: 36))
+//        cityLabel.textColor = .red
     }
     
     func run(after miliseconds: Int, completion: @escaping () -> Void) {
@@ -110,16 +118,16 @@ class WeatherVC: UIViewController {
 
     func updateUICurrentWeatherData() {
         cityLabel.text = weatherDataModel.city
-        cityLabel.textColor = .white
+//        cityLabel.textColor = .white
         
         temperatureLabel.text = "\(weatherDataModel.temperature)°"
-        temperatureLabel.textColor = .white
+//        temperatureLabel.textColor = .white
         
         dayAndDateLabel.text = getDayAndDate()
-        dayAndDateLabel.textColor = .white
+//        dayAndDateLabel.textColor = .white
         
         conditionLabel.text = weatherDataModel.condition
-        conditionLabel.textColor = .white
+//        conditionLabel.textColor = .white
         
         weatherConditionUIImage.image = UIImage(named: weatherDataModel.weatherIconName)
     }
@@ -274,5 +282,12 @@ class WeatherVC: UIViewController {
         let year = dateFormatter.string(from: date)
         
         return "\(dayOfWeek), \(day) \(month) \(year)"
+    }
+    
+    func dynamicFontSizeForIphone(fontSize : CGFloat) -> CGFloat {
+        var current_Size : CGFloat = 0.0
+        current_Size = self.sizeScreen.width/320
+        let FinalSize : CGFloat = fontSize * current_Size
+        return FinalSize
     }
 }
